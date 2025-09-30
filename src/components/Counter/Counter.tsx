@@ -1,6 +1,6 @@
 import {Scoreboard} from "./Scoreboard.tsx";
-import {Button} from "./Button.tsx";
-import {useState} from "react";
+import {Button} from "../Button.tsx";
+import {useEffect, useState} from "react";
 
 export const Counter = () => {
 
@@ -16,9 +16,20 @@ export const Counter = () => {
         setScore(minScore)
     }
 
+    useEffect(()=>{
+        const scoreAsString  = localStorage.getItem("score")
+        if (scoreAsString) {
+            const newScore = JSON.parse(scoreAsString);
+            setScore(newScore);
+        }
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem("score", JSON.stringify(score));
+    }, [score])
 
     return (
-        <div className="counter">
+        <div className="counter-styles">
             <Scoreboard score={score} maxScore={maxScore}/>
             <div className="btnWrapper">
                 <Button

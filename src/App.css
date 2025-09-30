@@ -6,9 +6,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 30px;
 }
 
-.counter {
+.counter-styles {
     border: 2px solid #47c0ff;
     border-radius: 15px;
     height: 350px;
@@ -54,4 +55,35 @@
 
     font-size: 40px;
     color: #3a3a3a;
+}
+
+
+.settings-container {
+    border: 2px solid #47c0ff;
+    border-radius: 15px;
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px;
+
+    font-size: 25px;
+    color: #47c0ff;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+
+    input {
+        border: 2px solid #3a3a3a;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 15px;
+    }
+    input:focus {
+        outline: 2px solid #47c0ff;
+    }
 }
