@@ -2,10 +2,15 @@ import {Scoreboard} from "./Scoreboard.tsx";
 import {Button} from "../Button.tsx";
 import {useEffect, useState} from "react";
 
-export const Counter = () => {
+type Props = {
+    maxValue: number
+    startValue: number
+}
 
-    const minScore = 0;
-    const maxScore = 5;
+export const Counter = (props: Props) => {
+
+    const minScore = props.startValue;
+    const maxScore = props.maxValue;
     const [score, setScore] = useState<number>(minScore);
 
     const increaseScore = () => {
