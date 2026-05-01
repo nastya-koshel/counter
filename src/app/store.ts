@@ -1,6 +1,6 @@
 import {configureStore} from "@reduxjs/toolkit";
 import {counterReducer, counterSlice} from "./counter-slice.tsx";
-import {saveState} from "./localstorage.ts";
+import {saveState} from "./localStorage.ts";
 
 export const store = configureStore({
     reducer: {

@@ -1,5 +1,5 @@
 import {createAppSlice} from "./createAppSlice.ts";
-import {loadState} from "./localstorage.ts";
+import {loadState} from "./localStorage.ts";
 
 export type counterStateType = {
     startValue: number,
