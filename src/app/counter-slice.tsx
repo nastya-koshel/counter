@@ -1,15 +1,17 @@
 import {createAppSlice} from "./createAppSlice.ts";
+import {loadState} from "./localstorage.ts";
 
-type counterStateType = {
+export type counterStateType = {
     startValue: number,
     maxValue: number,
     currentValue: number,
-
     tempStartValue: number,
     tempMaxValue: number,
 }
 
-const counterState: counterStateType = {
+const savedState = loadState();
+
+const defaultState: counterStateType = {
     startValue: 0,
     maxValue: 100,
     currentValue: 0,
@@ -17,6 +19,8 @@ const counterState: counterStateType = {
     tempStartValue: 0,
     tempMaxValue: 0,
 }
+
+const counterState: counterStateType = savedState || defaultState;
 
 export const counterSlice = createAppSlice({
     name: 'counter',
